@@ -1,0 +1,11 @@
+Link Figma:
+https://www.figma.com/design/w0I2fSq3g8rSkEV8hohsSz/RelojPersonarl_DIRIsesion2?m=auto&t=1NcOLN022WJpttZD-1
+
+componentes a utilizar:
+según lo visualizado en Figma, se separo la pantalla para utilizar en total 3 componentes, no se tomará en cuenta el componente del título, los cuales serán:
+
+-Reloj_Personal: serán el componente que actuará como reloj en el sistema, en el cúal se manejará el tiempo a mostrar con el estado tipo Date, dentro del mismo se utiliza el hook useEffect para que se ejecute cada segundo para ir actualizando el estado de Date, el cual finalmente se cambiará a formato HH:MM:SS para ser mostrado en la interfaz
+
+-Guardar_Tiempo: Será un componente que revolverá el botón que va debajo del tiempo y permitirá guardar el estado Date actual en el histórico
+
+-Historico_Tiempo: Será el componente que tendrá la lista de tiempos guardados por el usuario y los mostrará por la interfaz como una lista
