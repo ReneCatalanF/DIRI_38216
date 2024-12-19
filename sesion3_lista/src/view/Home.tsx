@@ -22,16 +22,32 @@ const Home: React.FC = () => {
     const { items } = useHomeViewModel(todoViewModel);
     //const [newItem, setNewItem] = useState<string>('');
     return (
+        <>
+        <Header/>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Color</th>
+            </tr>
+            {items.map((item: { id: number; nombre: string; color: string; }) => (
+                <>
+                    <tr key={item.id}>
+                        <td>{item.id}</td>
+                        <td>{item.nombre}</td>
+                        <td>{item.color}</td>
+                    </tr>
+                </>  
+            ))}
+        </table> 
+
         <div>
-            <Header/>
             <ul>
-                {items.map((item: { id: number; nombre: string; color: string; }, index: number) => (
-                    <li key={index}>
-                    {item.nombre} - {item.color}
-                    </li>
-                ))}
+                
             </ul>
         </div>
+        </>
+        
     );
 };
 

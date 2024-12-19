@@ -1,3 +1,5 @@
+
+//SE GENERAN 3 GATOS CON ID, NOMBRE Y COLOR
 const cat1 = {
     id: 1,
     nombre: 'gato1',
@@ -14,4 +16,5 @@ const cat3 = {
     color: 'negro'
 }
 
+//Y SE DEVUELVE UNA LISTA DE LOS GATOS
 export const list_cats = [cat1, cat2, cat3]

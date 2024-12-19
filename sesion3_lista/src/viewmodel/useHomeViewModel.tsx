@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { HomeViewModel } from './HomeViewModel';
 
+//SE CREA UN ELEMENTO HOOK DEL VIEWMODEL PARA ESCUCHAR LOS CAMBIOS
 export const useHomeViewModel = (viewModel: HomeViewModel) => {
     const [items, setItems] = useState<{ id: number; nombre: string; color: string; }[]>(viewModel.getItems());
     useEffect(() => {
