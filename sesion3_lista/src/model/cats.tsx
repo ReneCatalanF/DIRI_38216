@@ -3,17 +3,20 @@
 const cat1 = {
     id: 1,
     nombre: 'gato1',
-    color: 'negro'
+    color: 'negro',
+    mh: 'macho'
 }
 const cat2 = {
     id: 2,
     nombre: 'gato2',
-    color: 'blanco'
+    color: 'blanco',
+    mh: 'hembra'
 }
 const cat3 = {
     id: 3,
     nombre: 'gato3',
-    color: 'negro'
+    color: 'negro',
+    mh: 'hembra'
 }
 
 //Y SE DEVUELVE UNA LISTA DE LOS GATOS
