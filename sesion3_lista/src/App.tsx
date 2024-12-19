@@ -5,6 +5,7 @@ import viteLogo from '/vite.svg'
 import { Route, Routes } from 'react-router-dom'
 import Home from './view/Home'
 import About from './view/About'
+import NoMatch from './view/NotMatch';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
     <Routes>
     <Route path="/" element={<Home/>} />
     <Route path="/about" element={<About/>} />
+    <Route path="*" element={<NoMatch/>}/>
     {/* Resto de rutas */}
     </Routes>
     </>

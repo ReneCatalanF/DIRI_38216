@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
+import '../Styles/Header.css'
 
 
 const Header = (): React.JSX.Element =>
     <nav>
-    <Link to="/">Inicio</Link> | <Link to="/about">Acerca de...</Link>
+        <NavLink to="/">Inicio</NavLink> | <NavLink to="/about">Acerca de...</NavLink>
     </nav>
 
 export default Header
