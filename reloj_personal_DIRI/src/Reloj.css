@@ -1,0 +1,77 @@
+/* Reloj_Personal.css */
+.reloj-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #36454F; /* Gris oscuro de fondo */
+    padding: 40px;
+    min-height: 100vh; /* Para que ocupe toda la altura de la pantalla */
+  }
+  
+  .reloj-titulo {
+      color: white;
+      font-size: 2em;
+      margin-bottom: 20px;
+  }
+  
+  .hora-display {
+    background-color: #D3D3D3; /* Gris claro para el display de la hora */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+      font-size: 1.5em; /* Aumenta el tamaño de la fuente */
+      text-align: center; /* Centra el texto horizontalmente */
+      width: 200px; /* Ancho fijo para el display */
+  }
+  
+  .guardar-boton {
+    background-color: #2F4F4F; /* Gris oscuro para el botón */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px;
+
+  }
+  
+  .guardar-boton:hover {
+    background-color: #000; /* Negro al pasar el ratón */
+  }
+  
+  .instantes-guardados-display {
+    background-color: #D3D3D3; /* Gris claro para el display de instantes */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Ancho fijo para el display de instantes */
+      max-height: 200px; /* Altura máxima para el display */
+      overflow-y: auto; /* Agrega scroll vertical si se excede la altura */
+  }
+  
+  .instantes-guardados-lista {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .instantes-guardados-lista li {
+    padding: 5px 0; /* Reduce el padding vertical entre elementos */
+    border-bottom: 1px solid #ccc; /* Línea divisoria más clara */
+  }
+  
+  .borrar-boton {
+    background-color: #f44336; /* Rojo */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    margin-left: 10px; /* Espacio entre el tiempo y el botón */
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.borrar-boton:hover {
+    background-color: #da190b; /* Rojo más oscuro al pasar el ratón */
+}

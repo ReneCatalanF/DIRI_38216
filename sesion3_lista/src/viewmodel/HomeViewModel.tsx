@@ -26,7 +26,7 @@ export class HomeViewModel {
         return this.gatos[this.gato_selecionado];
     }
 
-    public async seleccionarGato(gato_id: number): Promise<void> {
+    public async seleccionarGato(gato_id: number) {
         this.gato_selecionado = gato_id - 1;
         this.notifyChange();
     }
