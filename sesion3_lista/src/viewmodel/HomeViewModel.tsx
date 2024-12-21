@@ -3,17 +3,25 @@ import { list_cats } from '../model/cats';
 
 //VIEWMODEL HOME, LISTA DE GATOS
 export class HomeViewModel {
-    private gato_selecionado: number = 0;
+    private gato_selecionado: { id: number; nombre: string; color: string; mh: string; } = 
+    {
+        id: 1,
+        nombre: 'gato1',
+        color: 'negro',
+        mh: 'macho'
+    }
     private gatos: { id: number; nombre: string; color: string; mh: string; } [] = [];
     private subscribers: Array<() => void> = [];
     constructor() {
         //DESDE EL CONSTRUCTOR SE TRAE LA LISTA DE GATOS
         this.loadItems();
+        
     }
 
     //FUNCION QUE TRAE Y ASIGNA LA LISTA
     private async loadItems() {
         this.gatos = list_cats;
+        this.gato_selecionado = this.gatos[0];
         this.notifyChange();
     }
 
@@ -23,11 +31,11 @@ export class HomeViewModel {
     }
 
     public getGatoseleccionado(): { id: number; nombre: string; color: string; mh: string; } {
-        return this.gatos[this.gato_selecionado];
+        return this.gato_selecionado;
     }
 
     public async seleccionarGato(gato_id: number) {
-        this.gato_selecionado = gato_id - 1;
+        this.gato_selecionado = this.gatos[gato_id - 1];
         this.notifyChange();
     }
     /*public async addItem(newItem: string): Promise<void> {
