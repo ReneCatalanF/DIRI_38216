@@ -1,0 +1,61 @@
+.App {
+  display: flex;
+  flex-direction: column; /* Alinea los elementos verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  padding: 20px;
+  font-family: sans-serif; /* Fuente más moderna */
+}
+
+.programs {
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos dentro de .programs */
+  margin-bottom: 20px; /* Espacio entre el selector y el formulario */
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.programs label {
+  margin-right: 10px; /* Espacio entre la etiqueta y el select */
+  font-weight: bold;
+}
+
+.appDropDowns {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+  appearance: none; /* Quita los estilos por defecto del select en algunos navegadores */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: white;
+  padding-right: 30px; /* Espacio para la flecha */
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>"); /* Flecha personalizada */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.programs div { /* Estilo para "Matriculaciones actuales" */
+  margin-left: 20px; /* Espacio a la izquierda */
+  font-style: italic;
+  color: #555;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .programs {
+      flex-direction: column; /* Apila los elementos verticalmente en pantallas pequeñas */
+      align-items: flex-start; /* Alinea a la izquierda */
+  }
+
+  .programs label {
+      margin-right: 0;
+      margin-bottom: 5px;
+  }
+
+  .programs div {
+      margin-left: 0;
+      margin-top: 10px;
+  }
+}
