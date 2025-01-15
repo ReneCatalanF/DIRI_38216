@@ -16,6 +16,9 @@ function App() {
   //El estado de estudiante
   const [student, setStudent] = useState<Student>()
 
+  //El estado para el estudiante a editar
+  const [editingStudent, setEditingStudent] = useState<Student>();
+
   //Ahora se generan los estados para contar las matriculas correspondiente a Grado o Postgrado
   const [ugEnrolments, setUGEnrolments] = useState(0);
   const [pgEnrolments, setPGEnrolments] = useState(0);
@@ -75,8 +78,10 @@ function App() {
       <EnrolmentForm chosenProgram={program}
         onChangeEnrolments={handleChangeEnrolments}
         currentEnrolments={selectedEnrolments()}
-        onStudentChanged={setStudent} />
-      <EnrolList student={student} onStudentRemoved={handleStudentRemoved} />
+        onStudentChanged={setStudent}
+        editingStudent={editingStudent} />
+      <EnrolList student={student} onStudentRemoved={handleStudentRemoved}
+      onStudentEditing={setEditingStudent} />
     </div>
   )
 }
