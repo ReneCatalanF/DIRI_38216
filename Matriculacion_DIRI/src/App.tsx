@@ -39,6 +39,12 @@ function App() {
     return program == "UG" ? ugEnrolments : pgEnrolments;
   };
 
+  const handleStudentRemoved = (student: Student): void => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    student.program === "UG" ? setUGEnrolments(ugEnrolments - 1) :
+      setPGEnrolments(pgEnrolments - 1);
+  };
+
 
   return (
     <div className="App">
@@ -66,11 +72,11 @@ function App() {
       Agregamos el componente de formulario
       Y agregar el componente de la Lista, entregandole el estado del estudiante para que escuche por cambios
       */}
-        <EnrolmentForm chosenProgram={program} 
-        onChangeEnrolments={handleChangeEnrolments} 
+      <EnrolmentForm chosenProgram={program}
+        onChangeEnrolments={handleChangeEnrolments}
         currentEnrolments={selectedEnrolments()}
         onStudentChanged={setStudent} />
-        <EnrolList student={student}/>
+      <EnrolList student={student} onStudentRemoved={handleStudentRemoved} />
     </div>
   )
 }
