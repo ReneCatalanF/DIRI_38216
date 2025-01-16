@@ -39,7 +39,7 @@ function Foods(props: FoodsProps) {
                                     />
                                     <div className="foodItem">
                                         <p className="foodDesc">{item.desc}</p>
-                                        <p className="foodPrice">{item.price}$</p>
+                                        <p data-testid="foodPrice" className="foodPrice">{item.price}$</p>
                                     </div>
                                 </li>
                             );

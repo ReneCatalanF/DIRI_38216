@@ -36,19 +36,6 @@ function FoodOrder(props: FoodOrderProps) {
         }
     };
 
-    /*
-    const handleOrder = async () => {
-        try {
-            handleClick();
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            console.log("Pedido enviado:", { food: props.food.name, quantity });
-            setIsOrdered(true);
-            props.onReturnToMenu();
-        } catch (error) {
-            console.error("Error al enviar el pedido:", error);
-            // Manejo de errores
-        }
-    };*/
 
     return (
         <>
@@ -61,11 +48,12 @@ function FoodOrder(props: FoodOrderProps) {
                 <h5>Nombre: </h5>
                 <p>{props.food.name}</p>
                 <h5>Precio: </h5>
-                <p>{props.food.price}</p>
+                <p>{props.food.price * quantity}</p>
                 <br />
                 <div>
                     <label>Cantidad a ordenar: </label>
                     <input
+                        data-testid="foodPriceF"
                         type="number"
                         id="cantidad"
                         className="number"
