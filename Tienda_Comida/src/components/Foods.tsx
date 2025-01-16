@@ -2,6 +2,7 @@ import { MouseEventHandler, useState } from "react";
 import { MenuItem } from '../entites/entities';
 import './Foods.css'
 import FoodOrder from './FoodOrder'
+import ima from '../images/Hamburg.jpg';
 
 interface FoodsProps {
     foodItems: MenuItem[];
@@ -33,7 +34,7 @@ function Foods(props: FoodsProps) {
                                         handleClick(item)}>
                                     <img
                                         className="foodImg"
-                                        src={`../images/${item.image}`}
+                                        src={ima}
                                         alt={item.name}
                                     />
                                     <div className="foodItem">

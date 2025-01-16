@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { MenuItem } from './entites/entities';
 import Foods from './components/Foods';
 import React from 'react';
-//import './App.css'
+import './App.css'
 
 export const foodItemsContext = React.createContext<MenuItem[]>([]);
 

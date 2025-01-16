@@ -1,6 +1,8 @@
 import { MouseEventHandler, useContext, useState } from "react";
 import { MenuItem } from "../entites/entities";
 import { foodItemsContext } from "../App";
+import './FoorOrder.css';
+import ima from '../images/Hamburg.jpg';
 
 interface FoodOrderProps {
     food: MenuItem;
@@ -51,6 +53,11 @@ function FoodOrder(props: FoodOrderProps) {
     return (
         <>
             <div>
+                <img
+                    className="foodImg"
+                    src={ima}
+                    alt={props.food.name}
+                />
                 <h5>Nombre: </h5>
                 <p>{props.food.name}</p>
                 <h5>Precio: </h5>
