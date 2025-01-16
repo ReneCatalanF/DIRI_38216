@@ -8,10 +8,11 @@ interface FoodsProps {
 }
 function Foods(props: FoodsProps) {
 
+
     const [foodOrder, setfoodOrder] = useState(false);
-    const [foodSelect, setfoodSelect] = useState<MenuItem>();
+    const [foodSelect, setfoodSelect] = useState<MenuItem | null>();
     const handleReturnToMenu = () => {
-        setfoodSelect(null);
+        setfoodOrder(!foodOrder);
     };
 
     const handleClick = (menu: MenuItem) => {

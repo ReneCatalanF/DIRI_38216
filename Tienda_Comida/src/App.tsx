@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import { MenuItem } from './entites/entities';
 import Foods from './components/Foods';
+import React from 'react';
 //import './App.css'
+
+export const foodItemsContext = React.createContext<MenuItem[]>([]);
 
 function App() {
   const [isChooseFoodPage, setIsChooseFoodPage] = useState(false);
@@ -44,6 +45,7 @@ function App() {
   ]);
 
   return (
+    <foodItemsContext.Provider value={menuItems}>
     <div className="App">
       <button className="toggleButton" onClick={() =>
         setIsChooseFoodPage(!isChooseFoodPage)}>
@@ -66,6 +68,7 @@ function App() {
       )}
       {isChooseFoodPage && <Foods foodItems={menuItems}></Foods>}
     </div>
+    </foodItemsContext.Provider>
   )
 }
 
