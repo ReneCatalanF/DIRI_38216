@@ -9,20 +9,21 @@ interface FoodOrderProps {
     onReturnToMenu: MouseEventHandler<HTMLButtonElement> | undefined;
 }
 function FoodOrder(props: FoodOrderProps) {
-    const [totalAmount, setTotalAmount] = useState(props.food.price);
     const [quantity, setQuantity] = useState(1);
-    const [isOrdered, setIsOrdered] = useState(false);
 
     const menuItems: MenuItem[] = useContext(foodItemsContext)
 
+    const [isOrder, setisOrder] = useState<boolean>(false);
+
     const handleClick = () => {
-        setIsOrdered(true);
+
         menuItems.map((item: MenuItem) => {
             if (item.id === props.food.id) {
                 item.quantity = item.quantity - quantity;
             }
         });
-        props.onReturnToMenu();
+        setisOrder(true);
+        //props.onReturnToMenu();
     };
 
     const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,6 +40,11 @@ function FoodOrder(props: FoodOrderProps) {
 
     return (
         <>
+            {isOrder === true && (
+                <div>
+                    <h4>Pedido realizado</h4>
+                </div>
+            )}
             <div>
                 <img
                     className="foodImg"

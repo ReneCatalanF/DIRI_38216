@@ -1,8 +1,8 @@
-import { MouseEventHandler, useState } from "react";
 import { MenuItem } from '../entites/entities';
 import './Foods.css'
 import FoodOrder from './FoodOrder'
 import ima from '../images/Hamburg.jpg';
+import { useState } from 'react';
 
 interface FoodsProps {
     foodItems: MenuItem[];
@@ -11,7 +11,7 @@ function Foods(props: FoodsProps) {
 
 
     const [foodOrder, setfoodOrder] = useState(false);
-    const [foodSelect, setfoodSelect] = useState<MenuItem | null>();
+    const [foodSelect, setfoodSelect] = useState<MenuItem>();
     const handleReturnToMenu = () => {
         setfoodOrder(!foodOrder);
     };
@@ -48,7 +48,7 @@ function Foods(props: FoodsProps) {
                 </>
             )
             }
-            {foodOrder && <FoodOrder food={foodSelect} onReturnToMenu={handleReturnToMenu}></FoodOrder>}
+            {foodOrder && <FoodOrder food={foodSelect!} onReturnToMenu={handleReturnToMenu}></FoodOrder>}
         </>
     );
 };
